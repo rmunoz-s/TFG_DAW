@@ -1,6 +1,7 @@
 import express from 'express';
 const route = express.Router();
-import productoController from '../controllers/productos.js'
+import productoController from '../controllers/productos.js';
+// const productoModel = require('../models/productoModel.js')
 
 route.post('/', productoController.create);
 route.get('/:id', productoController.getOne);
