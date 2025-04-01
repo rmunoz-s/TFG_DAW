@@ -1,0 +1,5 @@
+#ingore la carpeta node modules
+node_modules
+
+#no subir el archivo .env
+.env
