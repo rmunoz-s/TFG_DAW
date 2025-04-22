@@ -1,6 +1,8 @@
 import express from 'express';
 import routeProductos from './routes/productoRoute.js';
 import bodyParser from 'body-parser';
+import dbClient from './config/dbClient.js';
+
 const app = express();
 
 app.use(bodyParser.json());

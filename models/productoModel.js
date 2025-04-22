@@ -1,39 +1,25 @@
-// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import Producto from '../schemas/productoSchema.js';
 
-// const productSchema = new mongoose.Schema({
-//     name : {type: String, required: true},
-//     description: String,
-//     price :{ type: Number, required: true},
-//     stcok: {type: Number, default: 0},
-// })
-
-// module.exports = mongoose.model('productoModel, productSchema');
-import { ObjectId } from "mongodb";
-import dbClient from "../config/dbClient.js";
 class productoModelo{
     async create(producto){
-        const colProductos = dbClient.db.collection('productos');
-        return await colProductos.insertOne(producto);
+        return await Producto.create(producto);
     }
 
     async getAll(){
-        const colProductos = dbClient.db.collection('productos');
-        return await colProductos.find({}).toArray();
+        return await Producto.find();
     }
 
-    async getOne(id, producto){
-        const colProductos = dbClient.db.collection('productos');
-        return await colProductos.findOne({_id : new ObjectId(id)}, producto);
+    async getOne(id){
+        return await Producto.findById(id);
     }
 
     async delete(id){
-        const colProductos = dbClient.db.collection('productos');
-        return await colProductos.deleteOne({ _id : new ObjectId(id)});
+        return await Productp.findOneAndDelete({ _id: new mongoose.Types.ObjectId(id) });
     }
 
     async update(id, producto){
-        const colProductos = dbClient.db.collection('productos');
-        return await colProductos.updateOne({_id : new ObjectId(id)}, {$set: producto});
+        return await Producto.findOneAndUpdate({ _id: new mongoose.Types.ObjectId(id) }, producto , {new: true});
     }
 }
 
