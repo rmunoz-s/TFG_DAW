@@ -3,3 +3,4 @@ node_modules
 
 #no subir el archivo .env
 .env
+
