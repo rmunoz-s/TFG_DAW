@@ -1,0 +1,14 @@
+#loginSquare{
+	width: 40%;
+	height: 60vh;
+	display: flex;
+	background-color: aliceblue;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	margin-left: 30%;
+	margin-top: 5%;
+	font-size: 40px;
+	font-family: Mavenpro;
+}
+
