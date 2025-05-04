@@ -1,0 +1,31 @@
+{
+  "name": "tfg_daw",
+  "version": "1.0.0",
+  "description": "Trabajo TFG",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmunoz-s/TFG_DAW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmunoz-s/TFG_DAW/issues"
+  },
+  "homepage": "https://github.com/rmunoz-s/TFG_DAW#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "middleware": "^1.0.0",
+    "mongodb": "^6.14.2",
+    "mongoose": "^8.13.1"
+  }
+}
