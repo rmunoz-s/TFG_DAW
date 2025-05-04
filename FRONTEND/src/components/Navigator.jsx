@@ -14,3 +14,4 @@ function Navigator() {
 }
 
 export default Navigator;
+//Navegador del Home
