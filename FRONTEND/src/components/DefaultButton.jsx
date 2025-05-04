@@ -1,8 +1,11 @@
+import './DefaultButton.css'
+
 function DefaultButton(){
     return(
-        <div>
-            <ButtonText/>
-        </div>
+        <button className="bg-green-400 w-70 h-10">
+             <ButtonText/>
+        </button>
+        
     )
 }
 
