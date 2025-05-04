@@ -29,7 +29,7 @@ p{
 
 #loginSquare{
 	width: 40%;
-	height: 60vh;
+	height: 70vh;
 	display: flex;
 	background-color: #e4e4e4e2;
 	justify-content: center;
@@ -37,7 +37,7 @@ p{
 	border-radius: 30px;
 	flex-direction: column;
 	margin-left: 30%;
-	margin-top: 10%;
+	margin-top: 7%;
 	font-size: 40px;
 	font-family: 'Arial', sans-serif;
 }

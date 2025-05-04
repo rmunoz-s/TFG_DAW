@@ -4,19 +4,18 @@ import "./Login.css";
 function Login() {
 	  return (
 	<div>
-	  <h1>Login Page</h1>
 	  <form id="loginSquare">
+		<h1>LOGIN</h1>
+		<p>Continúa la aventura en tu mundo de la planta</p>
 		<div id='userBox'>
-		  <label name="username">Username</label>
 		  <br />
-		  <input type="text" id="username" name="username" required />
+		  <input type="text" id="username" name="username" placeholder='Nombre de usuario' required />
 		</div>
 		<div id='passwordBox'>
-		  <label name="password">Password</label>
 		  <br />
-		  <input type="password" id="password" name="password" required />
+		  <input type="password" id="password" name="password" placeholder='Contraseña' required />
 		</div>
-		<button id='buttonSubmit' type="submit">Login</button>
+		<button id='buttonSubmit' type="submit">Entrar</button>
 	  </form>
 	</div>
   );
