@@ -9,6 +9,9 @@ header{
     background: linear-gradient(90deg,rgba(10, 10, 10, 1) 31%, rgb(43, 73, 29) 100%);
 }
 .section1{
+    
+    background: url(/src/assets/section2bg.jpg);
+    background-size: cover;
     height: 98vh;
     width: 100%;
     margin: 0;
@@ -17,14 +20,29 @@ header{
     border: 1px solid red;
 }
 .section2{
+    background-color: #0a0a0a;
     height: 98vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.section2-cards-Container{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid red;
 }
 .section3{
+    background: url(/src/assets/section3bg.jpg);
+    background-size: cover;
     height: 98vh;
     width: 100%;
     margin: 0;
@@ -33,6 +51,7 @@ header{
     border: 1px solid red;
 }
 footer{
+    background-color: rgb(54, 54, 54);
     height: 98vh;
     width: 100%;
     margin: 0;
@@ -50,18 +69,41 @@ body{
 }
 
 .headerDesc-Container{
+    
     height: 70%;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    gap: 20%;
     align-items: center;
     flex-direction: row;
     color: white;
 }
-.headerDesc- div{
-   width: 50%;
-}
+
+.headerDesc-Container a{
+
+
+   color: white;
+   text-decoration: none;
+   font-size: smaller;
+ }
 .header-img{
-    width: 100%;
+    width: 50%;
     height: 100%;
+}
+
+.nav-Container{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+h1{
+    font-size: 50px;
+}
+p{
+    font-size: 18px;
 }

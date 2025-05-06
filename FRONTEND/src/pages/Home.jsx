@@ -20,8 +20,12 @@ function Home(){
                     <p>Easter season is coming and our Eastern Garden <br /> 
                     XR100 is waiting to be premiered by the Eastern Bunny! </p>
                     <p>Buy now and get a special discount</p>
-
-                    <DefaultButton text='Discover'/> 
+                
+                    <p><a href="">Tenemos un 20% de descuento para new users
+                    </a></p>
+                    <DefaultButton title='Discover'/> 
+               
+            
                 </div>
                 <div>
                     
@@ -33,17 +37,23 @@ function Home(){
             <div className="section1-Container">
                 <h2></h2>
                 <p></p>
-                <DefaultButton text='Saber Mas'/>
+                <DefaultButton title="Saber Mas"/>
             </div>
         </section>
 
         <section className="section2">
 
             <div className="section2-cards-Container">
-                <HomeCard/>
-                <HomeCard/>
-                <HomeCard/>
-                <HomeCard/>
+               
+                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
+                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
+
+            </div>
+            <div className="section2-cards-Container">
+               
+                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
+                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
+               
             </div>
             
         </section>

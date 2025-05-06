@@ -1,9 +1,9 @@
 import './Navigator.css'
 function Navigator() {
   return (
-    <div className="nanContainer w-70 h-10 bg-gray-400">
-		<img src="./SMARTFLORA.jpg" alt="" className="w-20 h-10"/>
-		<nav className = "navigator">
+    <div className="navContainer w-4/5 h-12 rounded-[20px] bg-gray-400 flex justify-around items-center">
+		<img src="./SMARTFLORA.jpg" alt="" className=""/>
+		<nav className = "navigator  w-4/5 h-12  flex justify-around items-center">
 			<a href="">Productos</a>
 			<a href="">Sobre Nosotros</a>
 			<a href="">Opiniones</a>

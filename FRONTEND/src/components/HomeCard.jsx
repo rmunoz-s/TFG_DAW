@@ -1,11 +1,11 @@
 import DefaultButton from "./DefaultButton"
 
-function HomeCard(){
+function HomeCard(props){
     return(
-        <div>
-            <h2></h2>
-            <p></p>
-            <DefaultButton></DefaultButton>
+        <div className="w-1/3 h-1/3 text-white border">
+            <h2>{props.title}</h2>
+            <p>{props.desc}</p>
+            <DefaultButton title="Check Out"></DefaultButton>
         </div>
     )
 }
