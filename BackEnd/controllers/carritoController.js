@@ -30,15 +30,16 @@ export const agregarAlCarrito = async (req, res) => {
       carrito.items.push({ producto: req.body.productoId, cantidad: 1 });
     }
 
-    carrito.total = carrito.items.reduce((total, item) => total + (producto.precio * item.cantidad), 0);
-    
+    await carrito.populate('items.producto'); 
+    carrito.total = carrito.items.reduce((total, item) => {
+      return total + (item.producto.price * item.cantidad);
+    }, 0);
+
     await carrito.save();
     res.json(carrito);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-
-  
 };
 
 export const eliminarDelCarrito = async (req, res) => {
