@@ -1,11 +1,26 @@
+import { useState } from "react"
 import DefaultButton from "./DefaultButton"
 
 function HomeCard(props){
+
+    const[bgImage, setBgImage] = useState([]);
+
+    const images = [
+        '/src/assets/card1.jpg',
+        '/src/assets/card2.jpg',
+        '/src/assets/card3.jpg',
+        '/src/assets/card4.jpg'
+    ];
+
+    
+    
     return(
-        <div className="w-1/3 h-1/3 text-white border">
-            <h2>{props.title}</h2>
+        <div className="w-50 h-1/2 text-white border p-10 flex flex-col text-center justify-center gap-10 bg-[url(/src/assets/card1.jpg)] bg-cover">
+            <h2 className="text-[30px]">{props.title}</h2>
             <p>{props.desc}</p>
-            <DefaultButton title="Check Out"></DefaultButton>
+            <div>
+                <DefaultButton title="Check Out"></DefaultButton>
+            </div>
         </div>
     )
 }

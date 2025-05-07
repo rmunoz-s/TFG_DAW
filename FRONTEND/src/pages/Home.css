@@ -8,6 +8,73 @@ header{
     background: #0a0a0a;
     background: linear-gradient(90deg,rgba(10, 10, 10, 1) 31%, rgb(43, 73, 29) 100%);
 }
+
+.headerDesc{
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: first baseline;
+    gap: 20px;
+}
+
+.headerStar{
+    font-size: 30px;
+}
+.headerDesc-Container{
+    
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+}
+
+.headerDesc-Container div{
+    width: 50%;
+    height: 100%;
+}
+.headerDesc-Container a{
+
+  
+   color: white;
+   text-decoration: underline;
+   font-size: 12px;
+ }
+
+.headerModel{
+    margin-top: 10%;
+    margin-right: 10%;
+   height: auto;
+   width: 100%;
+}
+
+canvas{
+    height: auto;
+    width: 100%;
+}
+
+.nav-Container{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+h1{
+    font-size: 50px;
+}
+p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
 .section1{
     
     background: url(/src/assets/section2bg.jpg);
@@ -18,27 +85,78 @@ header{
     padding: 0;
     box-sizing: border-box;
     border: 1px solid red;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.section1-Container{
+    border-radius: 5px;
+    margin-right: 300px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    width: 40%;
+    height: 70%;
+    background-color: rgb(10, 10, 10, 0.8);
+    backdrop-filter: blur(0.9);
+    color: white;
+}
+.section1-Container h1{
+    font-size: xx-large;
+}
+
+.section1-Content{
+    margin-right: 80px;
+}
+
+.section1-Button{
+    margin-top: 50px;
 }
 .section2{
     background-color: #0a0a0a;
-    height: 98vh;
+    height: 170vh;
     width: 100%;
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     border: 1px solid red;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
+.section2 h1{
+    color: white;
+}
+.section2 img{
+    width: 20%;
+   
+}
+.section2-title{
+    gap: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 70px;
+}
 .section2-cards-Container{
-  width: 50%;
-  height: 100%;
+  margin-bottom: 10%;
+  height: 85%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   border: 1px solid red;
+}
+
+.section2-Arrow{
+    
 }
 .section3{
     background: url(/src/assets/section3bg.jpg);
@@ -68,42 +186,3 @@ body{
     border: 1px solid rgb(103, 255, 57);
 }
 
-.headerDesc-Container{
-    
-    height: 70%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    gap: 20%;
-    align-items: center;
-    flex-direction: row;
-    color: white;
-}
-
-.headerDesc-Container a{
-
-
-   color: white;
-   text-decoration: none;
-   font-size: smaller;
- }
-.header-img{
-    width: 50%;
-    height: 100%;
-}
-
-.nav-Container{
-    width: 80%;
-    height: 40px;
-    display: flex;
-    justify-content: right;
-    margin-top: 20px;
-    margin-right: 40px;
-}
-
-h1{
-    font-size: 50px;
-}
-p{
-    font-size: 18px;
-}
