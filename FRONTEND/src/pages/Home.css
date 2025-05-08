@@ -6,11 +6,16 @@ header{
     box-sizing: border-box;
     border: 1px solid red;
     background: #0a0a0a;
-    background: linear-gradient(90deg,rgba(10, 10, 10, 1) 31%, rgb(43, 73, 29) 100%);
+    background: linear-gradient(90deg,rgba(10, 10, 10, 1) 31%, rgb(89, 126, 26) 100%);
 }
 
+.logoSmartFlora{
+    margin-top: 17px;
+    margin-left: 30px;
+    height: 30px;
+}
 .headerDesc{
-    margin-left: 3%;
+    margin-left: 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +28,7 @@ header{
 }
 .headerDesc-Container{
     
-    height: 70%;
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -44,76 +49,133 @@ header{
    font-size: 12px;
  }
 
-.headerModel{
-    margin-top: 10%;
-    margin-right: 10%;
-   height: auto;
-   width: 100%;
-}
 
-canvas{
-    height: auto;
-    width: 100%;
+.headerModel{
+    margin-right: 100px;
 }
 
 .nav-Container{
-    width: 80%;
-    height: 40px;
+    gap: 70px;
+    width: 97%;
+    height:90px;
     display: flex;
-    justify-content: right;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
-    margin-right: 40px;
+    
 }
 
 h1{
     font-size: 50px;
+    font-weight: 600;
 }
-p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
+
 
 .section1{
     
-    background: url(/src/assets/section2bg.jpg);
+    background: url(/src/assets/section2bg.png);
     background-size: cover;
+    background-repeat: no-repeat;
+   
     height: 98vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: 1px solid red;
-    display: flex;
-    justify-content: right;
-    align-items: center;
+    
 }
 
 .section1-Container{
-    border-radius: 5px;
-    margin-right: 300px;
-    text-align: right;
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: right;
-    width: 40%;
-    height: 70%;
-    background-color: rgb(10, 10, 10, 0.8);
-    backdrop-filter: blur(0.9);
-    color: white;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 .section1-Container h1{
     font-size: xx-large;
 }
 
 .section1-Content{
+    color: white;
+    text-align: right;
+    padding: 60px;
+    background-color: rgba(10, 10, 10, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-right: 80px;
+    width: 50%;
+    height: 80%;
+    gap: 20px
 }
 
+.section1-Content h1{
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.section1-Content p{
+    font-size: 20px;
+    font-weight: 400;
+}
 .section1-Button{
     margin-top: 50px;
+}
+
+
+.section1-graph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 30%;
+    background-color:rgba(10, 10, 10, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.section1-graph-images{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 120px;
+    animation: runSlider 5s linear infinite;
+}
+.section1-graph-images img{
+    overflow: hidden;
+    transition-duration: 0.2s;
+    transform-style: preserve-3d;
+    transition-timing-function: ease-in-out;
+    display: block;
+    height: 210px;
+    width: 39%;
+    border: 2px solid rgb(175, 255, 37);
+    border-radius: 100%;
+}
+
+/* .section1-graph-images img:hover{
+    transition-duration: 0.2s;
+    transform-style: preserve-3d;
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 40%;
+    height: 250px;
+    width: 50%;
+    
+} */
+
+@keyframes runSlider{
+    from{
+        transform: translateY(0);
+    }to{
+        transform: translateY(calc(94px * 7));
+    }
 }
 .section2{
     background-color: #0a0a0a;
@@ -130,6 +192,7 @@ p{
 
 .section2 h1{
     color: white;
+    font-weight: 100;
 }
 .section2 img{
     width: 20%;
@@ -155,9 +218,7 @@ p{
   border: 1px solid red;
 }
 
-.section2-Arrow{
-    
-}
+
 .section3{
     background: url(/src/assets/section3bg.jpg);
     background-size: cover;

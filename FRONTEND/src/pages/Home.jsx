@@ -11,6 +11,7 @@ function Home(){
         <>
         <header>
             <div className="nav-Container">
+            <img src="/src/assets/SMARTFLORA.png" alt="" className="logoSmartFlora"/>
                 <Navigator/>
             </div>
 
@@ -23,7 +24,7 @@ function Home(){
                 
                     <p><span className="headerStar">☆</span><a href="">Tenemos un 20% de descuento para new users
                     </a></p>
-                    <DefaultButton title='Discover'/> 
+                    <DefaultButton title='DISCOVER'/> 
                
             
                 </div>
@@ -36,15 +37,26 @@ function Home(){
         <section className="section1">
             <div className="section1-Container">
                 <div className="section1-Content">
-                    <h1>Hola hola hola</h1>
+                    <h1>POR QUE UTILIZAR SMARTFLORA?</h1>
                     <p>En un mundo donde todo evoluciona, tu manera de cuidar las <br /> plantas también puede hacerlo.
                         Nuestras  <br /> inteligentes no son solo un accesorio decorativo: <br />son una solución innovadora para quienes quieren conectar <br />
                         con la naturaleza de forma práctica, eficiente y tecnológica.</p>
                         < div className="section1-Button">
-                        <DefaultButton title="Saber Mas"/>
+                        <DefaultButton title="SABER MAS"/>
                         </div> 
                 </div>
                      
+                <div className="section1-graph">
+                    <div className="section1-graph-images">
+                    <img src="/src/assets/section2-img1.png" alt="" />
+                    <img src="/src/assets/section2-img2.png" alt="" />
+                    <img src="/src/assets/section2-img1.png" alt="" />
+                    <img src="/src/assets/section2-img2.png" alt="" />
+                    <img src="/src/assets/section2-img1.png" alt="" />
+                    <img src="/src/assets/section2-img2.png" alt="" />
+                    <img src="/src/assets/section2-img1.png" alt="" />
+                    </div>
+                </div>
             </div>
            
         </section>

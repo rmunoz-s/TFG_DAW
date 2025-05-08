@@ -1,8 +1,7 @@
-import './DefaultButton.css'
 
 function DefaultButton(props){
     return(
-        <button className="bg-green-400 w-60 h-12 ">
+        <button className="bg-lime-400 border-2 border-lime-100 text-black font-semibold tracking-wide w-60 h-14">
              {props.title}
         </button>
         

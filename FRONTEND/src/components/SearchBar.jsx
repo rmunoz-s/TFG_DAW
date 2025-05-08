@@ -7,7 +7,10 @@ function SearchBar() {
     
     return(
         <>
-        <input type="search" name="searchBar" id="searchBar" onChange={(e) => setSearch(e.target.value)} />
+        
+        <input type="search" name="searchBar" id="searchBar" className="w-80 h-10 rounded-full" placeholder=" Search something here..." />
         </>
     )
 }
+//<a target="_blank" href="https://icons8.com/icon/7695/search">Búsqueda</a> icono de <a target="_blank" href="https://icons8.com">Icons8</a>
+export default SearchBar;
