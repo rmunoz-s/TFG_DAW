@@ -4,7 +4,7 @@ header{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    
     background: #0a0a0a;
     background: linear-gradient(90deg,rgba(10, 10, 10, 1) 31%, rgb(89, 126, 26) 100%);
 }
@@ -83,7 +83,7 @@ h1{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    
     
 }
 
@@ -183,7 +183,7 @@ h1{
     width: 100%;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -215,28 +215,57 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  
 }
 
 
 .section3{
-    background: url(/src/assets/section3bg.jpg);
-    background-size: cover;
+    background-color: black;
     height: 98vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+   
+    display: flex;
+    align-items: center;
+}
+
+.section3-Container{
+    height: 60%;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
 }
 footer{
-    background-color: rgb(54, 54, 54);
-    height: 98vh;
+    color: white;
+    background-color: rgb(29, 29, 29);
+    height: 58vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.footerContainer{
+    font-size: large;
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 300px;
+}
+.columnaLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+footer img{
+    height: 20px;
 }
 body{
     height: 100%;

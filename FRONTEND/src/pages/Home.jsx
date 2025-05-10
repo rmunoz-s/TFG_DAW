@@ -80,29 +80,36 @@ function Home(){
         </section>
 
         <section className="section3">
-            <div>
-
+            <div className="section3-Container">
+                <img src="/src/assets/section3img1.png" alt="" />
+                <img src="/src/assets/section3img2.png" alt="" />
+                <img src="/src/assets/section2-img3.png" alt="" />
+                <img src="/src/assets/section2-img4.png" alt="" />
             </div>
         </section>
 
         <footer>
-            <div className="columnaLinks">
+            <div className="footerContainer">
+                <div className="columnaLinks">
+                    <a href="" className="columnaLink">Sobre nosotros</a>
+                    <a href="" className="columnaLink">Terminos de compra</a>
+                    <a href="" className="columnaLink">Devoluciones</a>
+                    <a href="" className="columnaLink">Terminos de compra</a>
+                    <a href="" className="columnaLink">Sobre nosotros</a>
+                </div>
+                <div className="columnaLinks">
                 <a href="" className="columnaLink">Sobre nosotros</a>
-                <a href="" className="columnaLink">Terminos de compra</a>
-                <a href="" className="columnaLink">Devoluciones</a>
-                <a href="" className="columnaLink">Terminos de compra</a>
-                <a href="" className="columnaLink">Sobre nosotros</a>
+                    <a href="" className="columnaLink">Terminos de compra</a>
+                    <a href="" className="columnaLink">Devoluciones</a>
+                    <a href="" className="columnaLink">Terminos de compra</a>
+                    <a href="" className="columnaLink">Sobre nosotros</a>
+                </div>
             </div>
-            <div className="columnaLinks"></div>
-                <a href="" className="columnaLink">Sobre nosotros</a>
-                <a href="" className="columnaLink">Terminos de compra</a>
-                <a href="" className="columnaLink">Devoluciones</a>
-                <a href="" className="columnaLink">Terminos de compra</a>
-                <a href="" className="columnaLink">Sobre nosotros</a>
-            <div>
-            <img src="./assets/SMARTFLORA.jpg" alt="" className="SmartFlora-LogoFooter" />
-            <p></p>
-            </div>
+                
+           
+            <img src="/src/assets/SMARTFLORA.jpg" alt="" className="SmartFlora-LogoFooter" />
+            <p>Copyrighted in 2025</p>
+            
         </footer>
         </>
     )

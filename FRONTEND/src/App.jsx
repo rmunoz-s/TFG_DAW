@@ -4,7 +4,6 @@ function App() {
   return (
     <div>
       <Home></Home>
-      <p>Hola</p>
 	</div>
   )
 }
