@@ -4,15 +4,15 @@ class productosController{
 
     }
 
-    async create(req, res){
-        const{name, description, price, stock } = req.body;
+    async create(req, res) {
+        const { name, description, price, stock, imageUrl } = req.body;
         try {
-            const data = await productoModel.create({ name, description, price, stock});
-            res.status(201).json(data);
+          const data = await productoModel.create({ name, description, price, stock, imageUrl });
+          res.status(201).json(data);
         } catch (e) {
-            res.status(500).send(e);
+          res.status(500).send(e);
         }
-    }
+      }
     async update(req, res){
         const{name, description, price, stock } = req.body;
         try {
