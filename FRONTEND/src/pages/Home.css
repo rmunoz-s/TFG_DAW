@@ -218,7 +218,37 @@ h1{
   
 }
 
+.section2{
+background-color: #0a0a0a;
+    height: 110vh
+1008.7px
+;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+ .section2 h1{
+    color: white;
+}
+
+.section2-cards-Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 36%;
+    margin: 0 auto;
+    align-items: baseline;
+    align-content: stretch;
+    justify-items: start;
+    padding-bottom: 6%;
+
+}
 .section3{
     background-color: black;
     height: 98vh;
