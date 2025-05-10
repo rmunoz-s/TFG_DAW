@@ -1,26 +1,32 @@
 import mongoose from 'mongoose';
-import Producto from '../schemas/productoSchema.js';
+import productoSchema from '../schemas/productoSchema.js';
 
-class productoModelo{
-    async create(producto){
-        return await Producto.create(producto);
-    }
+const Producto = mongoose.model('Producto', productoSchema);
 
-    async getAll(){
-        return await Producto.find();
-    }
+class productoModelo {
+  async create(producto) {
+    return await Producto.create(producto);
+  }
 
-    async getOne(id){
-        return await Producto.findById(id);
-    }
+  async getAll() {
+    return await Producto.find();
+  }
 
-    async delete(id){
-        return await Productp.findOneAndDelete({ _id: new mongoose.Types.ObjectId(id) });
-    }
+  async getOne(id) {
+    return await Producto.findById(id);
+  }
 
-    async update(id, producto){
-        return await Producto.findOneAndUpdate({ _id: new mongoose.Types.ObjectId(id) }, producto , {new: true});
-    }
+  async delete(id) {
+    return await Producto.findOneAndDelete({ _id: new mongoose.Types.ObjectId(id) });
+  }
+
+  async update(id, producto) {
+    return await Producto.findOneAndUpdate(
+      { _id: new mongoose.Types.ObjectId(id) },
+      producto,
+      { new: true }
+    );
+  }
 }
 
-export default new productoModelo;
+export default new productoModelo();
