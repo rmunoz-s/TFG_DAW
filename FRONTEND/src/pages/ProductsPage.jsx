@@ -1,14 +1,16 @@
 import React from "react";
 import Navigator from "../components/Navigator";
 import ProductList from "../components/ProductList";
+import "../components/BannerProducts"
+import BannerProducts from "../components/BannerProducts";
 
 const ProductsPage = () => {
   return (
     
-    <div className="products-page">
+    <div className="products-page bg-stone-950">
       <Navigator />
+      <BannerProducts />
 
-      <h1>Productos</h1>
       <ProductList />
     </div>
   );

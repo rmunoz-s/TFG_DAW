@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Navigator from "../components/Navigator"
 import DefaultButton from "../components/DefaultButton"
 import HomeCard from "../components/homeCard"
@@ -7,7 +9,6 @@ import { useEffect, useState } from "react"
 
 
 function Home(){
-
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
