@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Navigator from "../components/Navigator"
 import DefaultButton from "../components/DefaultButton"
 import HomeCard from "../components/homeCard"
@@ -6,13 +8,35 @@ import HeaderModel from "../components/headerModel"
 
 
 function Home(){
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/productos"); // Ruta del backend
+            const data = await response.json();
+            setProducts(data);
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        } finally {
+            setLoading(false);
+        }
+        };
+
+        fetchProducts();
+    }, []);
+
+    if (loading) {
+        return <p className="text-center text-white">Loading products...</p>;
+    }
 
     return(
         <>
         <header>
-            <div className="nav-Container">
+            
                 <Navigator/>
-            </div>
+
 
             <div className="headerDesc-Container">
                 <div className="headerDesc">
@@ -56,14 +80,16 @@ function Home(){
                 <h1>ENJOY A VARIETY OF PRODUCTS NOW</h1>
             </div>
 
-            <div className="section2-cards-Container">
-               
-                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
-                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>    
-                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
-                    <HomeCard title="Cherubin House Pot" desc="One of our smallest inventions, ideal for decorative plants such as cactuses"/>
-               
-            </div>
+        <div className="section2-cards-Container">
+          {products.map((product) => (
+            <HomeCard
+              key={product._id}
+              title={product.name}
+              desc={product.description}
+              imageUrl={product.imageUrl}
+            />
+          ))}
+        </div>
             
         </section>
 

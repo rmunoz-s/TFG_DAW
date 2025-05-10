@@ -116,25 +116,28 @@ p{
     margin-top: 50px;
 }
 .section2{
-    background-color: #0a0a0a;
-    height: 170vh;
+background-color: #0a0a0a;
+    height: 110vh
+1008.7px
+;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid red;
-    display: flex;
+    display: flex
+;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.section2 h1{
+ .section2 h1{
     color: white;
 }
+/*
 .section2 img{
     width: 20%;
    
-}
+} */
 .section2-title{
     gap: 70px;
     display: flex;
@@ -144,15 +147,18 @@ p{
     margin-bottom: 20px;
     margin-top: 70px;
 }
-.section2-cards-Container{
-  margin-bottom: 10%;
-  height: 85%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid red;
+.section2-cards-Container {
+display: grid
+;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 36%;
+    margin: 0 auto;
+    align-items: baseline;
+    align-content: stretch;
+    justify-items: start;
+    padding-bottom: 6%;
+
 }
 
 .section2-Arrow{
@@ -183,6 +189,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid rgb(103, 255, 57);
+    /* border: 1px solid rgb(103, 255, 57); */
 }
 

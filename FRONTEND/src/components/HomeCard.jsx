@@ -1,30 +1,28 @@
-import { useState } from "react"
-import DefaultButton from "./DefaultButton"
+import DefaultButton from "./DefaultButton";
 
-function HomeCard(props){
+function HomeCard({ title, desc, imageUrl = "default-pot.jpg" }) {
+  // Construir la URL completa si la imagen proviene del backend
+  const backendImageUrl = imageUrl.startsWith("/uploads")
+    ? `http://localhost:3000${imageUrl}`
+    : imageUrl;
 
-    const[bgImage, setBgImage] = useState([]);
+  return (
+    <div className="relative group w-80 h-80 overflow-hidden rounded-lg shadow-lg">
+      {/* Imagen */}
+      <img
+        src={backendImageUrl}
+        alt={title}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+      />
 
-    const images = [
-        '/src/assets/card1.jpg',
-        '/src/assets/card2.jpg',
-        '/src/assets/card3.jpg',
-        '/src/assets/card4.jpg'
-    ];
-
-    
-    
-    return(
-        <div className="w-50 h-1/2 text-white border p-10 flex flex-col text-center justify-center gap-10 bg-[url(/src/assets/card1.jpg)] bg-cover">
-            <h2 className="text-[30px]">{props.title}</h2>
-            <p>{props.desc}</p>
-            <div>
-                <DefaultButton title="Check Out"></DefaultButton>
-            </div>
-        </div>
-    )
+      {/* Contenido oculto que aparece al hacer hover */}
+      <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <h2 className="text-2xl font-bold text-white mb-2">{title}</h2>
+        <p className="text-sm text-gray-300 mb-4">{desc}</p>
+        <DefaultButton title="Check Out" />
+      </div>
+    </div>
+  );
 }
-export default HomeCard
-//cards de la seccion 3 sobre los productos de la tienda.
-//puse HomeCard para especificar que son los cards del Home, 
-//ya que la tienda tambien los tendra
+
+export default HomeCard;
