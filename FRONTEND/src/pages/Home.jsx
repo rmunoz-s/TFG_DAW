@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-
 import Navigator from "../components/Navigator"
 import DefaultButton from "../components/DefaultButton"
 import HomeCard from "../components/homeCard"
 import './Home.css'
 import HeaderModel from "../components/headerModel"
-import { useEffect, useState } from "react"
+
 
 
 function Home(){
