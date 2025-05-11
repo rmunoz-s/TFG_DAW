@@ -8,14 +8,14 @@ const Register = () => {
 		email: '',
         password: ''
     });
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({...formData, [name]: value});
     }
-
+    console.log(formData);
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { username, email, password } = formData;
@@ -38,7 +38,7 @@ const Register = () => {
                 const errorData = await response.json();
                 throw new Error(errorData.error || 'Error en el registro');
             }
-            navigate('/Login');
+            navigate('/features/auth/Login');
         } catch (error) {
             setError(error.message);
         }
@@ -70,7 +70,7 @@ const Register = () => {
 			<br />
 			<input type="password" id="password" name="password" placeholder='Contraseña' value={formData.password} onChange={handleChange} required />
 		  </div>
-		  <button id='buttonSubmit' type="submit">Registrarse</button>
+		  <button id='buttonSubmit' type="submit" onClick={handleSubmit} >Registrarse</button>
 		</form>
 	  </div>)
 };
