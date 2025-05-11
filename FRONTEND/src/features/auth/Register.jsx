@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./Register.css";
+import styles from './Register.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -44,35 +44,47 @@ const Register = () => {
         }
     };
 
-    return (<div>
-		<form id="loginSquare">
-		  <h1>Register</h1>
-		  <p>Bienvenido a un nuevo mundo por conocer</p>
-		  <div id='userBox'>
-			<br />
-			<input 
-				type="text" 
-				id="username" 
-				name="username" 
-				placeholder='Nombre de usuario' 
-				value={formData.username} 
-				required 
+    return (
+		<div className={styles.container}>
+		  <h1 className={styles.title}>Registro</h1>
+		  {error && <p style={{ color: 'red' }}>{error}</p>}
+		  <form onSubmit={handleSubmit}>
+			<div className={styles.box}>
+			  <input
+				type="text"
+				name="username"
+				placeholder="Usuario"
+				value={formData.username}
 				onChange={handleChange}
-				/>
-		  </div>
-		  <div id='emailBox'>
-		  </div>
-		  <div id='passwordBox'>
-			<br />
-			<input type="email" id="email" name="email" placeholder='Pon tu correo electrónico' value={formData.email} onChange={handleChange} required />
-		  </div>
-		  <div id='passwordBox'>
-			<br />
-			<input type="password" id="password" name="password" placeholder='Contraseña' value={formData.password} onChange={handleChange} required />
-		  </div>
-		  <button id='buttonSubmit' type="submit" onClick={handleSubmit} >Registrarse</button>
-		</form>
-	  </div>)
-};
+				className={styles.input}
+			  />
+			</div>
+			<div className={styles.box}>
+			  <input
+				type="email"
+				name="email"
+				placeholder="Correo electrónico"
+				value={formData.email}
+				onChange={handleChange}
+				className={styles.input}
+			  />
+			</div>
+			<div className={styles.box}>
+			  <input
+				type="password"
+				name="password"
+				placeholder="Contraseña"
+				value={formData.password}
+				onChange={handleChange}
+				className={styles.input}
+			  />
+			</div>
+			<div>
+			  <button type="submit" className={styles.button}>Registrarse</button>
+			</div>
+		  </form>
+		</div>
+	  );
+	};
 
 export default Register;
