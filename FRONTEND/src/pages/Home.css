@@ -77,7 +77,7 @@ h1{
     background: url(/src/assets/section2bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-   
+    
     height: 98vh;
     width: 100%;
     margin: 0;
@@ -147,6 +147,7 @@ h1{
     gap: 120px;
     animation: runSlider 5s linear infinite;
 }
+
 .section1-graph-images img{
     overflow: hidden;
     transition-duration: 0.2s;
@@ -159,16 +160,9 @@ h1{
     border-radius: 100%;
 }
 
-/* .section1-graph-images img:hover{
-    transition-duration: 0.2s;
-    transform-style: preserve-3d;
-    transition-timing-function: ease-in-out;
-    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    opacity: 40%;
-    height: 250px;
-    width: 50%;
-    
-} */
+
+
+
 
 @keyframes runSlider{
     from{
@@ -217,25 +211,20 @@ background-color: #0a0a0a;
     width: 36%;
     margin: 0 auto;
     align-items: baseline;
-    align-content: stretch;
+    align-content: center;
     justify-items: start;
     padding-bottom: 6%;
 
 }
 
 .section2{
-background-color: #0a0a0a;
-    height: 110vh
-1008.7px
-;
+    background-color: #0a0a0a;
+    height: 110vh;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
-    display: flex
-;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+
 }
 
  .section2 h1{
@@ -246,7 +235,7 @@ background-color: #0a0a0a;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    width: 36%;
+    width: 38%;
     margin: 0 auto;
     align-items: baseline;
     align-content: stretch;
@@ -261,7 +250,6 @@ background-color: #0a0a0a;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
     display: flex;
     align-items: center;
 }
@@ -272,36 +260,7 @@ background-color: #0a0a0a;
     display: flex;
     justify-content: space-around;
 }
-footer{
-    color: white;
-    background-color: rgb(29, 29, 29);
-    height: 58vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-   
-}
 
-.footerContainer{
-    font-size: large;
-    display: flex ;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 300px;
-}
-.columnaLinks{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-footer img{
-    height: 20px;
-}
 body{
     height: 100%;
     width: 100%;

@@ -6,7 +6,7 @@ function Navigator() {
   return (
     <div className="navContainer  flex justify-around items-center py-5">
 		<img src="/src/assets/SMARTFLORA.jpg" alt="" className=""/>
-		<nav className = "navigator rounded-[20px] bg-gray-400 w-4/5 h-12  flex justify-around items-center">
+		<nav className = "navigator rounded-[40px] bg-gray-400 w-4/5 h-16  flex justify-around items-center">
 			<a href="/src/pages/ProductsPage">Productos</a>
 			<a href="">Sobre Nosotros</a>
 			<a href="">Opiniones</a>

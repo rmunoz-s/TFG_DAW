@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Navigator from "../components/Navigator"
 import DefaultButton from "../components/DefaultButton"
-import HomeCard from "../components/homeCard"
+import HomeCard from "../components/HomeCard";
 import './Home.css'
 import HeaderModel from "../components/headerModel"
+import Footer from "../components/Footer";
+import CestaSlider from "../components/CestaSlider";
 
 
 
@@ -36,7 +38,7 @@ function Home(){
         <header>
         
 
-                <Navigator/>
+            <Navigator/>
        
 
             <div className="headerDesc-Container">
@@ -53,7 +55,7 @@ function Home(){
             
                 </div>
                 <div className="headerModel">
-                    <HeaderModel/>
+                   <img src="" alt="" />
                 </div>
             </div>
         </header>
@@ -72,23 +74,27 @@ function Home(){
                      
                 <div className="section1-graph">
                     <div className="section1-graph-images">
-                    <img src="/src/assets/section2-img1.png" alt="" />
-                    <img src="/src/assets/section2-img2.png" alt="" />
-                    <img src="/src/assets/section2-img1.png" alt="" />
-                    <img src="/src/assets/section2-img2.png" alt="" />
-                    <img src="/src/assets/section2-img1.png" alt="" />
-                    <img src="/src/assets/section2-img2.png" alt="" />
-                    <img src="/src/assets/section2-img1.png" alt="" />
+                        <img src="/src/assets/slider1.jpg" alt="" />
+                        <img src="/src/assets/slider2.jpg" alt="" />
+                        <img src="/src/assets/slider3.jpg" alt="" />
+                        <img src="/src/assets/slider4.jpg" alt="" />
+                        <img src="/src/assets/slider5.jpg" alt="" />
+                        <img src="/src/assets/slider6.jpg" alt="" />
+                        <img src="/src/assets/slider1.jpg" alt="" />
                     </div>
                 </div>
             </div>
+
+           
            
         </section>
+        
+        <CestaSlider/>
 
         <section className="section2">
 
             <div className="section2-title">
-                <img src="./src/assets/Vector.jpg" alt="" className="section2-Arrow" />
+                <img src="./src/assets/Vector.png" alt="" className="section2-Arrow" />
                 <h1>ENJOY A VARIETY OF PRODUCTS NOW</h1>
             </div>
 
@@ -112,32 +118,12 @@ function Home(){
                 <img src="/src/assets/section3img2.png" alt="" />
                 <img src="/src/assets/section2-img3.png" alt="" />
                 <img src="/src/assets/section2-img4.png" alt="" />
+                <img src="/src/assets/section3img1.png" alt="" />
+                <img src="/src/assets/section3img2.png" alt="" />
             </div>
         </section>
 
-        <footer>
-            <div className="footerContainer">
-                <div className="columnaLinks">
-                    <a href="" className="columnaLink">Sobre nosotros</a>
-                    <a href="" className="columnaLink">Terminos de compra</a>
-                    <a href="" className="columnaLink">Devoluciones</a>
-                    <a href="" className="columnaLink">Terminos de compra</a>
-                    <a href="" className="columnaLink">Sobre nosotros</a>
-                </div>
-                <div className="columnaLinks">
-                <a href="" className="columnaLink">Sobre nosotros</a>
-                    <a href="" className="columnaLink">Terminos de compra</a>
-                    <a href="" className="columnaLink">Devoluciones</a>
-                    <a href="" className="columnaLink">Terminos de compra</a>
-                    <a href="" className="columnaLink">Sobre nosotros</a>
-                </div>
-            </div>
-                
-           
-            <img src="/src/assets/SMARTFLORA.jpg" alt="" className="SmartFlora-LogoFooter" />
-            <p>Copyrighted in 2025</p>
-            
-        </footer>
+        <Footer/>
         </>
     )
 }

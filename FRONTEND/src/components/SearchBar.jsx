@@ -8,7 +8,7 @@ function SearchBar() {
     return(
         <>
         
-        <input type="search" name="searchBar" id="searchBar" className="w-80 h-10 rounded-full" placeholder=" Search something here..." />
+        <input type="search" name="searchBar" id="searchBar" className="w-1/4 h-8 rounded-full bg-slate-300" placeholder=" Search something here..." />
         </>
     )
 }
