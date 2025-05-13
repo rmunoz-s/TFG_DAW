@@ -5,6 +5,7 @@ import App from './App';
 import Login from './features/auth/Login';
 import Register from './features/auth/Register';
 import ProductsPage from './pages/ProductsPage'; 
+import ProductoFinal from './pages/ProductoFinal';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
   {
     path: '/products',
     element: <ProductsPage />,
+  },
+  {
+    path: '/products/:id',
+    element: <ProductoFinal/>
+  },
+  {
+    path: '/producto-final',
+    element: <ProductoFinal />,
   },
 ]);
 
