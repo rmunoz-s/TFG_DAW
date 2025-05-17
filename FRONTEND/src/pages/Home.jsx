@@ -99,7 +99,7 @@ function Home(){
             </div>
 
            <div className="section2-cards-Container">
-            {products.map((product) => (
+            {products.slice(0, 4).map((product) => (
                 <HomeCard
                 key={product._id}
                 title={product.name}

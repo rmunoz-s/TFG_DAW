@@ -30,7 +30,7 @@ const ProductList = () => {
   }
 
   return (
-    <div className="flex gap-5 mt-20 px-60 bg-neutral-950 text-white ">
+    <div className="flex gap-5 mt-20 px-60 bg-neutral-950 text-white mb-20 ">
       <div className="w-1/4 border-2 border-lime-600 rounded-lg p-5 bg-neutral-800">
         <h3 className="text-green-500 text-center font-bold mb-4">Filtros</h3>
         {/* Aquí puedes agregar filtros */}

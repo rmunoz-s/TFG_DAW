@@ -22,7 +22,7 @@ function Footer(){
                 
            
             <div className=" h-8 w-1/4 flex flex-col justify-center items-center mt-28">
-                <img src="/src/assets/SMARTFLORA.jpg" alt="" className="SmartFlora-LogoFooter h-[20px]" />
+                <img src="/src/assets/SMARTFLORAx4.png" alt="" className="SmartFlora-LogoFooter h-[20px]" />
                 <p className="text-xs">@Copyrighted in 2025</p>
             </div>
             
