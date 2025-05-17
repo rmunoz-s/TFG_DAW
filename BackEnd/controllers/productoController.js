@@ -5,19 +5,63 @@ class productosController{
     }
 
     async create(req, res) {
-        const { name, description, price, stock, imageUrl } = req.body;
+        const { name,
+                description,
+                price,
+                stock,
+                shortDescription,
+                longDescription,
+                sections,
+                features,
+                specifications,
+                images,
+                category } = req.body;
         try {
-          const data = await productoModel.create({ name, description, price, stock, imageUrl });
+          const data = await productoModel.create({ 
+            name,
+            description,
+            price,
+            stock,
+            shortDescription,
+            longDescription,
+            sections,
+            features,
+            specifications,
+            images,
+            category
+           });
           res.status(201).json(data);
         } catch (e) {
           res.status(500).send(e);
         }
       }
     async update(req, res){
-        const{name, description, price, stock } = req.body;
+        const{
+            name,
+            description,
+            price,
+            stock,
+            shortDescription,
+            longDescription,
+            sections,
+            features,
+            specifications,
+            images,
+            category
+        } = req.body;
         try {
             const {id} = req.params;
-            const data =await productoModel.update(id, {name, description, price, stock});
+            const data =await productoModel.update(id, {name,
+                    description,
+                    price,
+                    stock,
+                    shortDescription,
+                    longDescription,
+                    sections,
+                    features,
+                    specifications,
+                    images,
+                    category});
             res.status(200).json(data);
 
         } catch (e) {
