@@ -2,6 +2,7 @@ import './Navigator.css'
 import SearchBar from './SearchBar'
 import DropDownProfile from './DropDownProfile';
 import React from 'react';
+import AboutUsPage from '../pages/AboutUsPage';
 
 function Navigator() {
 
@@ -13,7 +14,7 @@ function Navigator() {
 		</a>
 		<nav className = "navigator rounded-[20px] bg-gray-400 w-[70%] h-12  flex justify-around items-center">
 			<a href="/pages/products">Productos</a>
-			<a href="">Sobre Nosotros</a>
+			<a href="/pages/about">Sobre Nosotros</a>
 			<a href="">Opiniones</a>
 			<a href="">Soporte</a>
 			
