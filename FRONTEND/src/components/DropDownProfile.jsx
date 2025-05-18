@@ -2,16 +2,18 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './DropDownProfile.css';
 
+
 function DropDownProfile() {
   const navigate = useNavigate();
   const username = localStorage.getItem('username');
+  console.log(username);
   const isLoggedIn = !!localStorage.getItem('token');
 
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
     localStorage.removeItem('username');
-    navigate('/features/auth/Login');
+    navigate('/');
   };
 
   return (

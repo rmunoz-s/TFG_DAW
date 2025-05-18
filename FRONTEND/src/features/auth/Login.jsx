@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: '', password: '' });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -14,8 +14,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { username, password } = formData;
-    if (!username || !password) {
+    const { email, password } = formData;
+    if (!email || !password) {
       setError('Por favor, completa todos los campos');
       return;
     }
@@ -23,7 +23,7 @@ const Login = () => {
       const response = await fetch('http://localhost:3000/usuarios/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ email, password })
       });
       if (!response.ok) {
         const errorData = await response.json();
@@ -32,7 +32,9 @@ const Login = () => {
       const data = await response.json();
       localStorage.setItem('token', data.token);
 	  localStorage.setItem('username', data.username);
-      navigate('/Home');
+  	  console.log (username);
+
+      navigate('/');
     } catch (error) {
       setError(error.message);
     }
@@ -48,11 +50,11 @@ const Login = () => {
           <p className={styles.subtitle}>Continúa la aventura en tu mundo de la planta</p>
           {error && <p className={styles.errorMessage}>{error}</p>}
           <input
-            type="text"
-            name="username"
-            placeholder="Nombre de usuario"
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
             className={styles.inputField}
-            value={formData.username}
+            value={formData.email}
             onChange={handleChange}
             required
           />
