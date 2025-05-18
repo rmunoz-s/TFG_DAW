@@ -15,7 +15,7 @@ function CarContainer() {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // Incluye el token en los encabezados
+            Authorization: `Bearer ${token}`, 
           },
         });
 
@@ -27,7 +27,6 @@ function CarContainer() {
         const items = data.items || [];
         setCartItems(items);
         
-        // Inicializar todos los items como seleccionados por defecto
         const initialSelected = {};
         items.forEach(item => {
           initialSelected[item.producto._id] = true;
@@ -79,7 +78,6 @@ function CarContainer() {
       );
       
       if (updatedItem) {
-        // Actualizar estado local con la cantidad desde el servidor
         setCartItems(prevItems => 
           prevItems.map(item => 
             item.producto._id === productId 

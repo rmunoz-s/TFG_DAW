@@ -6,6 +6,7 @@ import Login from './features/auth/login';
 import Register from './features/auth/Register';
 import ProductsPage from './pages/ProductsPage'; 
 import CarPage from './pages/CarPage';
+import AboutUsPage from './pages/AboutUsPage';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/pages/car',
     element: <CarPage />,
-  },
+  },{
+    path: '/pages/about',
+    element: <AboutUsPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

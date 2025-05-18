@@ -20,19 +20,43 @@ const productoSchema = new mongoose.Schema({
     required: true,
     min: 0
   },
+  shortDescription:{
+    type: String,
+    required: true
+  },
+  longDescription:{
+    type:String,
+    required: true
+  },
+  sections:{
+    type: [{title: String, content: String}]
+    
+  },
   features: {
     type: [String],
     default: []
   },
-  imageUrl: {
-    type: String,
-    default: 'default-pot.jpg'
+   specifications: {
+    type: [String],
+    default: []
   },
+ 
+  images: {
+  type: [
+    {
+      id: { type: String, required: true },
+      url: { type: String, required: true }
+    }
+  ],
+  default: []
+},
+
   category: {
     type: String,
     enum: ['interior', 'exterior', 'jardinería', 'smart'],
     default: 'smart'
   },
+  
   createdAt: {
     type: Date,
     default: Date.now
