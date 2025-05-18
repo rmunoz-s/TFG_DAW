@@ -21,13 +21,13 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: 'pages/products',
+    path: '/pages/products',
     element: <ProductsPage />,
   },
   {
     path: '/pages/car',
     element: <CarPage />,
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

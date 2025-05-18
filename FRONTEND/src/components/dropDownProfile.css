@@ -9,6 +9,7 @@
   background-color: white;
 
 }
+
 .dropDownProfile::before{
   position: absolute;
   top: -2rem;

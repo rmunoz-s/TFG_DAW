@@ -31,6 +31,7 @@ const Login = () => {
       }
       const data = await response.json();
       localStorage.setItem('token', data.token);
+	  localStorage.setItem('username', data.username);
       navigate('/Home');
     } catch (error) {
       setError(error.message);
