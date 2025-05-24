@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "React Debug",
+        "request": "launch",
+        "type": "chrome",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceFolder}",
+        "runtimeExecutable": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
+    }
+    ]
+}
