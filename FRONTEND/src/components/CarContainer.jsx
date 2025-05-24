@@ -6,7 +6,8 @@ function CarContainer() {
   const [loading, setLoading] = useState(true);
 
   // Variables en quemado
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTM2ZDdiM2Y4ZTRkMDFmZjI1YTliZCIsImlhdCI6MTc0NzQxNjYzNywiZXhwIjoxNzQ3NDIwMjM3fQ.Nnu7dhPJSDHHc4raR28KgWP5ulIWZ6aSYx8NsOkUwHs";
+  const token = localStorage.getItem("token");
+
 
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -205,7 +206,7 @@ function CarContainer() {
                 onChange={() => handleCheckboxChange(item.producto._id)}
               />
               <img
-                src={`http://localhost:3000${item.producto.imageUrl}`}
+                src={`http://localhost:3000${item.producto.images[0].url}`}
                 alt={item.producto.name}
                 className="w-24 h-24 object-cover rounded-lg"
               />
