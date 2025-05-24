@@ -7,6 +7,7 @@ import Register from './features/auth/Register';
 import ProductsPage from './pages/ProductsPage'; 
 import CarPage from './pages/CarPage';
 import AboutUsPage from './pages/AboutUsPage';
+import ProductoFinal from './pages/ProductoFinal';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
   {
     path: '/pages/products',
     element: <ProductsPage />,
+  },  {
+    path: '/products/:id',
+    element: <ProductoFinal/>
   },
   {
     path: '/pages/car',

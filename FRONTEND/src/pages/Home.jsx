@@ -88,7 +88,6 @@ function Home(){
            
         </section>
         
-        <CestaSlider/>
 
         <section className="section2">
 
