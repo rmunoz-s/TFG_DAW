@@ -2,12 +2,15 @@ import { useParams, Link } from 'react-router-dom'; // Para capturar el id desde
 import { useState, useEffect } from 'react';
 import './ProductoFinal.css';
 import Navigator from '../components/Navigator';
+import CestaSlider from '../components/CestaSlider';
 import Footer from '../components/Footer';
 
 function ProductoFinal() {
   const { id } = useParams(); // Obtiene el ID del producto de la URL
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState(''); // 'success' o 'error'
   
   useEffect(() => {
     const fetchProduct = async () => {
@@ -47,7 +50,44 @@ function ProductoFinal() {
       ? `http://localhost:3000${bannerImageTwo.url}`
       : bannerImageTwo?.url || "default-pot.jpg";
 
+  // Función para agregar al carrito
+  const handleAddToCart = async () => {
+    const token = localStorage.getItem("token");
+    
+    if (!token) {
+      setMessage('Debes iniciar sesión para añadir productos al carrito');
+      setMessageType('error');
+      return;
+    }
 
+    try {
+      const response = await fetch(`http://localhost:3000/carrito/agregar`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ productoId: id })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Error al añadir al carrito");
+      }
+      
+      setMessage('¡Producto añadido al carrito!');
+      setMessageType('success');
+      
+      setTimeout(() => {
+        setMessage('');
+      }, 3000);
+      
+    } catch (error) {
+      console.error("Error añadiendo al carrito:", error);
+      setMessage(error.message || "Error al añadir al carrito");
+      setMessageType('error');
+    }
+  };
     
 
   return (
@@ -95,10 +135,19 @@ function ProductoFinal() {
             </p>
             <p className="product-stock">
               <strong>Cantidad en stock:</strong> {product.stock || product.stock}
-            </p>
-            <button className="add-to-cart-btn bg-lime-600">
+            </p>            <button className="add-to-cart-btn bg-lime-600 hover:bg-lime-700 transition-colors" onClick={handleAddToCart}>
               Añadir al carrito
             </button>
+            {message && (
+              <div className={`message mt-2 text-center p-2 rounded-md ${messageType === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                {message}
+              </div>
+            )}
+            {message && (
+              <div className={`message ${messageType}`}>
+                {message}
+              </div>
+            )}
 
           </div>
 
@@ -126,10 +175,8 @@ function ProductoFinal() {
                     <li key={index} className="feature-item">{spec}</li>
                   ))}
                 </ul>
-                 <Link to="/products" className="back-button">
-                  ← Volver a la lista de productos
-                </Link>
-                
+
+                <CestaSlider/>
                 <Footer/>
             </div>
             

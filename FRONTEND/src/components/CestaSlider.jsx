@@ -61,7 +61,7 @@ function CestaSlider() {
                         <HomeCard
                             key={product._id}
                             title={product.name}
-                            desc={product.description} 
+                            desc={product.description}
                             product={product}
                         />
                     ))}
