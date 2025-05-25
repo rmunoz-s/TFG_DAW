@@ -8,6 +8,7 @@ import ProductsPage from './pages/ProductsPage';
 import CarPage from './pages/CarPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ProductoFinal from './pages/ProductoFinal';
+import DetallesCompra from './pages/DetallesCompra';
 import ViewUser from './features/auth/viewUser';
 import EditUser from './features/auth/editUser';
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: '/features/auth/editUser',
     element: <EditUser />,
+  },
+  {
+    path: '/pages/car/DetallesCompra',
+    element: <DetallesCompra/>
   },
   {
     path: '/pages/products',

@@ -135,7 +135,16 @@ function ProductoFinal() {
             </p>
             <p className="product-stock">
               <strong>Cantidad en stock:</strong> {product.stock || product.stock}
-            </p>            <button className="add-to-cart-btn bg-lime-600 hover:bg-lime-700 transition-colors" onClick={handleAddToCart}>
+            </p>
+            <Link to={{
+              pathname: `/products/${id}/DetallesCompra`
+              
+            }}>
+            <button id='buy-button'>
+              Comprar
+            </button>
+            </Link>
+            <button className="add-to-cart-btn bg-lime-600">
               Añadir al carrito
             </button>
             {message && (

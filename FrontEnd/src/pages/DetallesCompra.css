@@ -1,0 +1,38 @@
+
+.mainContainerForms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.payment_form{
+    background-color: #101010;
+}
+
+
+#datosPersonales{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 60%;
+    width: 40%;
+    background-color: azure;
+}
+
+
+#formdePago{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 60%;
+    width: 40%;
+    background-color: azure;
+}
+
+input{
+    height: 40px;
+    width: 300px;
+}

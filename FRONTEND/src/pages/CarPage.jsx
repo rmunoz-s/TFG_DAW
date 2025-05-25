@@ -11,7 +11,7 @@ const CarPage = () => {
       <Navigator />
       <CarContainer />
       <CestaSlider />
-      < Footer/>
+      <Footer/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { useCarrito } from "../hooks/carritoHooks";
+import { Link } from "react-router-dom";
 
 function CarContainer() {
   const {
@@ -121,9 +122,11 @@ function CarContainer() {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button className="bg-lime-500 text-black px-6 py-2 rounded-md hover:bg-lime-600 transition-colors">
-              Proceder al pago
-            </button>
+           <Link to="/pages/car/DetallesCompra">
+                <button className="bg-lime-500 text-black px-6 py-2 rounded-md hover:bg-lime-600 transition-colors">
+                  Proceder al pago
+                </button>
+            </Link>
           </div>
         </div>
       )}
