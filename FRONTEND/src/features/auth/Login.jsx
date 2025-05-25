@@ -31,8 +31,8 @@ const Login = () => {
       }
       const data = await response.json();
       localStorage.setItem('token', data.token);
-	  localStorage.setItem('username', data.username);
-  	  console.log (username);
+      localStorage.setItem('userId', data.userId);
+      console.log(data.userId);
 
       navigate('/');
     } catch (error) {

@@ -73,18 +73,17 @@ h1{
 
 
 .section1{
-    
     background: url(/src/assets/section2bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    
     height: 98vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 .section1-Container{
@@ -184,6 +183,8 @@ background-color: #0a0a0a;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: flex;
+    margin-top: 2%
 }
 
  .section2 h1{
@@ -217,15 +218,6 @@ background-color: #0a0a0a;
 
 }
 
-.section2{
-    background-color: #0a0a0a;
-    height: 110vh;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-
-}
 
  .section2 h1{
     color: white;
