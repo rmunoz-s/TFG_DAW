@@ -1,25 +1,33 @@
 import './Navigator.css'
 import SearchBar from './SearchBar'
-
+import DropDownProfile from './DropDownProfile';
+import React from 'react';
+import AboutUsPage from '../pages/AboutUsPage';
 
 function Navigator() {
+
+  const [openProfile, setOpenProfile] = React.useState(false);
   return (
     <div className="navContainer  flex justify-around items-center py-5">
-		<img src="/src/assets/SMARTFLORA.jpg" alt="" className=""/>
-		<nav className = "navigator rounded-[40px] bg-gray-400 w-4/5 h-16  flex justify-around items-center">
-			<a href="/src/pages/ProductsPage">Productos</a>
-			<a href="">Sobre Nosotros</a>
+		<a href="/" className='w-[20%]'>		
+			<img src="/src/assets/SMARTFLORAx4.png" alt="" className="w-[80%]"/> 
+		</a>
+		<nav className = "navigator rounded-[20px] bg-gray-400 w-[70%] h-12  flex justify-around items-center">
+			<a href="/pages/products">Productos</a>
+			<a href="/pages/about">Sobre Nosotros</a>
 			<a href="">Opiniones</a>
 			<a href="">Soporte</a>
-			<a href="">Tienda</a>
 			
 			<SearchBar/>
 
-			<a href=""> <img src="/src/assets/icons8-carrito-de-compras-64.png" alt="" className='h-10' /></a>
-            <a href=""><img src="/src/assets/icons8-usuario-masculino-en-círculo-50.png" alt="" className='h-10'/></a>
+			<a href="/pages/car"> <img src="https://img.icons8.com/?size=100&id=9720&format=png&color=ccff67" alt="" className='h-10' /></a>
+            <a  onClick={()=> setOpenProfile(!openProfile)}><img  src="/src/assets/icons8-usuario-masculino-en-círculo-50.png" alt="" className='h-10'/></a>
 		</nav>
+
+		{
+			openProfile && <DropDownProfile /> 
+		}
 	</div>
-	
 	);
 }
 

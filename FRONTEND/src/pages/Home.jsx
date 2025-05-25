@@ -3,7 +3,6 @@ import Navigator from "../components/Navigator"
 import DefaultButton from "../components/DefaultButton"
 import HomeCard from "../components/HomeCard";
 import './Home.css'
-import HeaderModel from "../components/headerModel"
 import Footer from "../components/Footer";
 import CestaSlider from "../components/CestaSlider";
 
@@ -35,14 +34,14 @@ function Home(){
 
     return(
         <>
-        <header>
+        <header className="h-[100%] ">
         
 
             <Navigator/>
        
 
-            <div className="headerDesc-Container">
-                <div className="headerDesc">
+            <div className="headerDesc-Container w-[100%] ">
+                <div className="headerDesc ">
                     <h1>EASTERN GARDEN XR100</h1>
                     <p>Easter season is coming and our Eastern Garden <br /> 
                     XR100 is waiting to be premiered by the Eastern Bunny! </p>
@@ -54,8 +53,8 @@ function Home(){
                
             
                 </div>
-                <div className="headerModel">
-                   <img src="" alt="" />
+                <div className="headerModel flex justify-center">
+                    <img src="/src/assets/macetas-banner.png" className="w-[70%] :" alt="" />
                 </div>
             </div>
         </header>
@@ -98,7 +97,7 @@ function Home(){
             </div>
 
            <div className="section2-cards-Container">
-            {products.map((product) => (
+            {products.slice(0, 4).map((product) => (
                 <HomeCard
                 key={product._id}
                 title={product.name}

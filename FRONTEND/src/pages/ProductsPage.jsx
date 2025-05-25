@@ -3,6 +3,7 @@ import Navigator from "../components/Navigator";
 import ProductList from "../components/ProductList";
 import "../components/BannerProducts"
 import BannerProducts from "../components/BannerProducts";
+import Footer from "../components/Footer";
 
 const ProductsPage = () => {
   return (
@@ -12,6 +13,8 @@ const ProductsPage = () => {
       <BannerProducts />
 
       <ProductList />
+
+      < Footer/>
     </div>
   );
 };

@@ -46,16 +46,16 @@ function CestaSlider(){
 
     return(
         
-        <section className=" w-full bg-white h-96 flex justify-center relative overflow-hidden border-red-800 border-2 ">
+        <section className=" w-full bg-black-900 h-96 flex justify-center relative overflow-hidden mb-20 mt-20">
 
-            <button class="pre-btn border-none w-[20vw] h-full absolute top-0 flex justify-center items-center  cursor-pointer z-[8] left-0 rotate-180">
-                <img src="/src/assets/arrow.png" alt="" className=""/>
+            <button class="pre-btn border-none w-[10vw] h-full absolute top-0 flex justify-center items-center  cursor-pointer z-[8] left-0 rotate-180">
+                <img src="https://img.icons8.com/?size=100&id=7849&format=png&color=ccff67" alt="" className="w-[30%]"/>
                 </button>
-            <button class="nxt-btn border-none w-[20vw] h-full absolute top-0 flex justify-center items-center  cursor-pointer z-[8] right-0 ">
-                <img src="/src/assets/arrow.png" alt="" className=""/>
+            <button class="nxt-btn border-none w-[10vw] h-full absolute top-0 flex justify-center items-center  cursor-pointer z-[8] right-0 ">
+                <img src="https://img.icons8.com/?size=100&id=7849&format=png&color=ccff67" alt="" className="w-[30%]"/>
                 </button>
 
-            <div className=" w-4/6 product-container px-[-50vw] flex overflow-x-auto scroll-smooth items-center scroll ">
+            <div className=" w-4/6 product-container px-[-50vw] flex  overflow-hidden scroll-smooth items-center scroll  ">
                 <div className="card-list grid grid-flow-col gap-4">
                     {products.map((product) => (
                         <HomeCard
