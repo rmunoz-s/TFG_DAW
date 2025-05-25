@@ -1,0 +1,309 @@
+:global(html, body) {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgb(89, 126, 26) 0%, rgb(10, 10, 10) 80%);
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.edit-user-container {
+  width: 40%;
+  max-width: 500px;
+  min-height: 60vh;
+  display: flex;
+  background-color: #e4e4e4e2;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.edit-user-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.password-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.password-input input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: white;
+  color: #333;
+}
+
+.password-input input:focus {
+  outline: none;
+  border-color: #2ecc71;
+}
+
+.password-input input::placeholder {
+  color: #666;
+}
+
+.password-input input:focus::placeholder {
+  color: #333;
+}
+
+.form-label {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.editable {
+  cursor: pointer;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: white;
+  width: 100%;
+  position: relative;
+}
+
+.editable:hover {
+  border-color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.editable.editing {
+  border-color: #3498db;
+  background-color: white;
+}
+
+.editable.editing input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+}
+
+.editable.editing input:focus {
+  box-shadow: none;
+}
+
+.editable::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3498db;
+  transition: width 0.3s ease;
+}
+
+.editable:hover::after {
+  width: 100%;
+}
+
+.editable.editing::after {
+  width: 100%;
+  background: #2980b9;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.form-input {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2ecc71;
+}
+
+.form-input::placeholder {
+  color: #666;
+}
+
+.form-input:focus::placeholder {
+  color: #333;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  text-align: center;
+  margin: 1.5rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+}
+
+.success-message::before {
+  content: '✓';
+  font-size: 1.5rem;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.success-message::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px;
+  animation: shine 3s infinite;
+  z-index: 1;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -40px 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+.retry-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.retry-button:hover {
+  background-color: #c0392b;
+}
