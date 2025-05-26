@@ -1,15 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState} from "react";
 import Navigator from "../components/Navigator";
-import { useCarrito } from "../hooks/carritoHooks";
 import './DetallesCompra.css';
 import Footer from "../components/Footer";
-import { vaciarCarrito } from "../../../BackEnd/controllers/carritoController";
+import { useCarrito } from "../hooks/carritoHooks";
+import { useNavigate } from "react-router-dom";
 
 function DetallesCompra() {
+
+   
+  const navigate = useNavigate();
+
   const {
+    vaciarHandler,
+    selectedItems,
     loading,
     calculateSubtotal,
-    clearCart // <-- Make sure your useCarrito hook provides this!
+    cartItems,
   } = useCarrito();
 
   // State for messages
@@ -24,21 +30,7 @@ function DetallesCompra() {
     return <p className="text-center text-white">Cargando carrito...</p>;
   }
 
-   const removeItem = async (token, productId) => {
-    const response = await fetch(`${API_URL}/${productId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
   
-    if (!response.ok) {
-      throw new Error("Error al eliminar producto");
-    }
-  
-    return response.json();
-  };
 
   const realizarCompra = (event) => {
     event.preventDefault();
@@ -51,17 +43,17 @@ function DetallesCompra() {
      
       datosPersonalesRef.current.reset();
       formdePagoRef.current.reset();
-      vaciarCarrito();
+        
+      setTimeout(() => {
+        setSuccess(false);
+        navigate('/');
+      }, 2000);
 
-      
-
-     
-      setTimeout(() => setSuccess(false), 4000);
     } else {
+      
       setSuccess(false);
       setError(true);
 
-      
       setTimeout(() => setError(false), 4000);
     }
   };
@@ -94,7 +86,8 @@ function DetallesCompra() {
             <h2>Subtotal</h2>
             <span id="subTotal" className="text-2xl font-bold">${calculateSubtotal()}</span>
           </div>
-          <button className="realizarCompra" type="submit">
+        
+          <button className="realizarCompra" type="submit" onClick={() => vaciarHandler()}>
             Realizar compra
           </button>
 

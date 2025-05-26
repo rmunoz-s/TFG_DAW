@@ -67,3 +67,19 @@ export const removeItem = async (token, productId) => {
 
   return response.json();
 };
+
+ export const vaciarCarrito = async (token) => {
+    const response = await fetch(`${API_URL}/`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      if (!response.ok) {
+        throw new Error("Error vaciar carrito");
+      }
+      
+      return response.json();
+  };

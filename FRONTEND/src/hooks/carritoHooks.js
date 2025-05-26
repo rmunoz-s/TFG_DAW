@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchCartItems, incrementItem, decrementItem, removeItem } from "../services/carritoService";
+import { fetchCartItems, incrementItem, decrementItem, removeItem, vaciarCarrito } from "../services/carritoService";
 
 export const useCarrito = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -112,6 +112,17 @@ export const useCarrito = () => {
     return cartItems.filter(item => selectedItems[item.producto._id]).length;
   };
 
+  const vaciarHandler = async () => {
+    try {
+      await vaciarCarrito(token);
+      setCartItems([]);
+      setSelectedItems({});
+    } catch (error) {
+      console.error("Error vaciando carrito:", error);
+      alert("Error al vaciar el carrito");
+    }
+  };
+
   return {
     cartItems,
     selectedItems,
@@ -121,6 +132,7 @@ export const useCarrito = () => {
     handleDecrement,
     handleRemove,
     calculateSubtotal,
-    countSelectedItems
+    countSelectedItems,
+    vaciarHandler
   };
 };
