@@ -1,4 +1,4 @@
-import Carrito from '../models/carritoModel.js';
+ import Carrito from '../models/carritoModel.js';
 import Producto from '../models/productoModel.js';
 
 export const obtenerCarrito = async (req, res) => {
