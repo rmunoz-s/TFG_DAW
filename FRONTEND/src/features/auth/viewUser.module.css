@@ -1,0 +1,131 @@
+:global(html, body) {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgb(89, 126, 26) 0%, rgb(10, 10, 10) 80%);
+  z-index: -2;
+}
+
+.back-button {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.back-link {
+  color: #2ecc71;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #27ae60;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.view-user-container {
+  width: 40%;
+  max-width: 500px;
+  min-height: 60vh;
+  display: flex;
+  background-color: #e4e4e4e2;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.retry-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.retry-button:hover {
+  background-color: #2980b9;
+}
+
+.view-user-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.user-info-label {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.user-info-value {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  background: #f0f8ff;
+  border-radius: 6px;
+  font-weight: 500;
+}

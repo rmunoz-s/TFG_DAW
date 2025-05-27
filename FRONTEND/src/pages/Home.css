@@ -73,18 +73,17 @@ h1{
 
 
 .section1{
-    
     background: url(/src/assets/section2bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    
     height: 98vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 .section1-Container{
@@ -184,6 +183,8 @@ background-color: #0a0a0a;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: flex;
+    margin-top: 2%
 }
 
  .section2 h1{
@@ -214,37 +215,18 @@ background-color: #0a0a0a;
     align-content: center;
     justify-items: start;
     padding-bottom: 6%;
+    justify-items: center;
 
 }
 
-.section2{
-    background-color: #0a0a0a;
-    height: 110vh;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-
-}
 
  .section2 h1{
     color: white;
 }
 
-.section2-cards-Container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    width: 38%;
-    margin: 0 auto;
-    align-items: baseline;
-    align-content: stretch;
-    justify-items: start;
-    padding-bottom: 6%;
 
-}
 .section3{
-    background-color: black;
+background-color: black;
     height: 98vh;
     width: 100%;
     margin: 0;
@@ -252,6 +234,8 @@ background-color: #0a0a0a;
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .section3-Container{
@@ -261,12 +245,27 @@ background-color: #0a0a0a;
     justify-content: space-around;
 }
 
+.section3-Content{
+    color: white;
+    text-align: center;
+    padding: 60px;
+    background-color: rgba(10, 10, 10, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 80px;
+    width: 50%;
+    height: 80%;
+    gap: 20px
+}
+
 body{
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #0a0a0a;
     /* border: 1px solid rgb(103, 255, 57); */
 }
 

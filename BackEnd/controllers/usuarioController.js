@@ -28,7 +28,39 @@ export const loginUsuario = async (req, res) => {
       expiresIn: '1h'
     });
     
-    res.json({ token, userId: usuario._id });
+    res.json({ token, userId: usuario._id, username:usuario.username });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const obtenerUsuario = async (req, res) => {
+  try {
+    const usuario = await Usuario.findById(req.params.id);
+    if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
+    
+    res.json(usuario);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const actualizarUsuario = async (req, res) => {
+  const{
+    username,
+    email,
+    password
+  } = req.body;
+
+  try {
+    const usuarioActualizado = await Usuario.findByIdAndUpdate(
+      req.params.id,
+      { username, email, password },
+      { new: true }
+    );
+    if (!usuarioActualizado) return res.status(404).json({ error: 'Usuario no encontrado' });
+
+    res.json(usuarioActualizado);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

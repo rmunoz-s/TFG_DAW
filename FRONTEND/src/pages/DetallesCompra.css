@@ -1,0 +1,76 @@
+.mainContainerForms{
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    background: linear-gradient(180deg, rgb(89, 126, 26) 0%, rgb(10, 10, 10) 80%);
+}
+.payment_form{
+    background-color: #101010;
+    height: 100vh;
+    width: 100%;
+}
+
+
+#datosPersonales{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 20px;
+    height: 80%;
+    width: 40%;
+    background-color: #262626;
+}
+
+.datosPersonalesTitle{
+    font-size: 35px;
+    color: greenyellow;
+}
+.formdePagoTitle{
+    font-size: 35px;
+    color: greenyellow;
+}
+#formdePago{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 20px;
+    height: 60%;
+    width: 40%;
+    background-color:  #262626;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+    height: 40px;
+    width: 500px;
+    color: black;
+}
+
+.realizarCompra{
+    color: #101010;
+    border-radius: 4px;
+    background-color: greenyellow;
+    height: 45px;
+    width: 200px;
+}
+
+
+#successPayment, #incorrectPayment{
+    animation: slide;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: greenyellow;
+    font-size: 20px;
+}
+
+@keyframes slide {
+  from {transform: translateY(-20px);}
+  to {transform: translateY(0px);}
+}
