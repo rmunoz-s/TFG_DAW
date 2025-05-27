@@ -18,7 +18,7 @@ function HomeCard({ title, desc, product = "default-pot.jpg" }) {
         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
       />
 
-      {/* Contenido oculto para el hover */}
+
       <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <h2 className="text-2xl font-bold text-white mb-2">{title}</h2>
         <p className="text-sm text-gray-300 mb-4">{desc}</p>

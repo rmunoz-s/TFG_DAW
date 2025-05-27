@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'; // Para capturar el id desde la URL
+import { useParams, Link } from 'react-router-dom'; 
 import { useState, useEffect } from 'react';
 import './ProductoFinal.css';
 import Navigator from '../components/Navigator';
@@ -6,12 +6,12 @@ import CestaSlider from '../components/CestaSlider';
 import Footer from '../components/Footer';
 
 function ProductoFinal() {
-  const { id } = useParams(); // Obtiene el ID del producto de la URL
+  const { id } = useParams(); 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' o 'error'
-  
+  const [messageType, setMessageType] = useState('');
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -33,27 +33,24 @@ function ProductoFinal() {
     }
   }, [id]);
 
-  // Preparar la URL de la imagen
   const cardImage = product.images?.find(img => img.id === "Card");
   const bannerImageOne = product.images?.find(img => img.id === "Banner");
   const bannerImageTwo = product.images?.find(img => img.id === "Banner2");
 
 
-  // Si la imagen existe, construir el URL
-    const imageUrl = cardImage?.url?.startsWith("/uploads/")
-      ? `http://localhost:3000${cardImage.url}`
-      : cardImage?.url || "default-pot.jpg";
-      const bannerUrl = bannerImageOne?.url?.startsWith("/uploads/")
-      ? `http://localhost:3000${bannerImageOne.url}`
-      : bannerImageOne?.url || "default-pot.jpg";
-      const bannerUrl2 = bannerImageTwo?.url?.startsWith("/uploads/")
-      ? `http://localhost:3000${bannerImageTwo.url}`
-      : bannerImageTwo?.url || "default-pot.jpg";
+  const imageUrl = cardImage?.url?.startsWith("/uploads/")
+    ? `http://localhost:3000${cardImage.url}`
+    : cardImage?.url || "default-pot.jpg";
+  const bannerUrl = bannerImageOne?.url?.startsWith("/uploads/")
+    ? `http://localhost:3000${bannerImageOne.url}`
+    : bannerImageOne?.url || "default-pot.jpg";
+  const bannerUrl2 = bannerImageTwo?.url?.startsWith("/uploads/")
+    ? `http://localhost:3000${bannerImageTwo.url}`
+    : bannerImageTwo?.url || "default-pot.jpg";
 
-  // Función para agregar al carrito
   const handleAddToCart = async () => {
     const token = localStorage.getItem("token");
-    
+
     if (!token) {
       setMessage('Debes iniciar sesión para añadir productos al carrito');
       setMessageType('error');
@@ -74,25 +71,25 @@ function ProductoFinal() {
         const errorData = await response.json();
         throw new Error(errorData.error || "Error al añadir al carrito");
       }
-      
+
       setMessage('¡Producto añadido al carrito!');
       setMessageType('success');
-      
+
       setTimeout(() => {
         setMessage('');
       }, 3000);
-      
+
     } catch (error) {
       console.error("Error añadiendo al carrito:", error);
       setMessage(error.message || "Error al añadir al carrito");
       setMessageType('error');
     }
   };
-    
+
 
   return (
     <div className="producto-final-container">
-      <Navigator/>
+      <Navigator />
       {loading ? (
         <div className="loading">Cargando producto...</div>
       ) : !product._id ? (
@@ -102,31 +99,31 @@ function ProductoFinal() {
         </div>
       ) : (
         <div className="product-detail">
-          
-            <div className="product-image">
-                <img 
-                  src={imageUrl || "default-pot.jpg"} 
-                  alt={product.name || product.nombre} 
-                  className="product-img"
-                />
-                
-            </div>
+
+          <div className="product-image">
+            <img
+              src={imageUrl || "default-pot.jpg"}
+              alt={product.name || product.nombre}
+              className="product-img"
+            />
+
+          </div>
           <div className="product-info">
-           
+
             {product.features && product.features.length > 0 && (
-              
+
               <>
-              <img src="https://img.icons8.com/?size=100&id=Eh9Rhi3YSOY1&format=png&color=a5fc03" alt="" className='product-title-icon' />
-              <h1 className="product-title">{product.name || product.nombre} 
-              </h1>
-              
-              <p className="product-description">{product.description || product.descripcion || "Sin descripción"}</p>
-              <ul className="product-sections">
-              {product.sections.map((section, index) => (
-                <li key = {index} >✦  {section.content}</li>
-              ))}
-            </ul>
-                
+                <img src="https://img.icons8.com/?size=100&id=Eh9Rhi3YSOY1&format=png&color=a5fc03" alt="" className='product-title-icon' />
+                <h1 className="product-title">{product.name || product.nombre}
+                </h1>
+
+                <p className="product-description">{product.description || product.descripcion || "Sin descripción"}</p>
+                <ul className="product-sections">
+                  {product.sections.map((section, index) => (
+                    <li key={index} >✦  {section.content}</li>
+                  ))}
+                </ul>
+
               </>
             )}
 
@@ -151,40 +148,40 @@ function ProductoFinal() {
 
           </div>
 
-            <div className="producto-final-section2">
-              
-                <img src={bannerUrl} alt="" className='section2-bannerImg' />
-                <p className='section2-desc'>{product.longDescription}</p>
+          <div className="producto-final-section2">
 
-                <div className="section2-arrow">
-                  <img src="/src/assets/vector.png" alt="" className='section2-arrow-Img'/>
-                </div>
-                <h2 className="features-title">Características</h2>
-                <ul className="features-list">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="feature-item">{feature}</li>
-                  ))}
-                 
-                </ul>
+            <img src={bannerUrl} alt="" className='section2-bannerImg' />
+            <p className='section2-desc'>{product.longDescription}</p>
 
-                <img src={bannerUrl2} alt="" className='section2-bannerImg' />
-
-                  <h2 className='features-title'>Especificaciones</h2>
-                <ul className='specifications-list'>
-                  {product.specifications.map((spec, index) => (
-                    <li key={index} className="feature-item">{spec}</li>
-                  ))}
-                </ul>
-
-                <CestaSlider/>
-                <Footer/>
+            <div className="section2-arrow">
+              <img src="/src/assets/vector.png" alt="" className='section2-arrow-Img' />
             </div>
-            
+            <h2 className="features-title">Características</h2>
+            <ul className="features-list">
+              {product.features.map((feature, index) => (
+                <li key={index} className="feature-item">{feature}</li>
+              ))}
+
+            </ul>
+
+            <img src={bannerUrl2} alt="" className='section2-bannerImg' />
+
+            <h2 className='features-title'>Especificaciones</h2>
+            <ul className='specifications-list'>
+              {product.specifications.map((spec, index) => (
+                <li key={index} className="feature-item">{spec}</li>
+              ))}
+            </ul>
+
+
+          </div>
+
         </div>
-        
+
       )}
-      
-       
+
+      <CestaSlider />
+      <Footer />
     </div>
   );
 }

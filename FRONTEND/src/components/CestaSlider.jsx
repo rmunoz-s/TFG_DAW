@@ -10,7 +10,7 @@ function CestaSlider() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch("http://localhost:3000/productos"); // Ruta del backend
+                const response = await fetch("http://localhost:3000/productos"); 
                 const data = await response.json();
                 setProducts(data);
             } catch (error) {

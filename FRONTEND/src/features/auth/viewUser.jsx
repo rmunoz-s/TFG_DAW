@@ -16,7 +16,6 @@ function ViewUser() {
       return;
     }
 
-    // Obtener datos del usuario usando el token
     const fetchUserData = async () => {
       try {
         const userId = localStorage.getItem('userId');

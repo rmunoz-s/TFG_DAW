@@ -15,7 +15,7 @@ function Home() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch("http://localhost:3000/productos"); // Ruta del backend
+                const response = await fetch("http://localhost:3000/productos");
                 const data = await response.json();
                 setProducts(data);
             } catch (error) {
@@ -104,6 +104,22 @@ function Home() {
                         <img src="/src/assets/slider6.jpg" alt="" />
                         <img src="/src/assets/slider1.jpg" alt="" />
                     </div>
+                </div>
+
+                <div className="section3-Content">
+                    <h1>¿Por qué elegir macetas inteligentes?</h1>
+                    <p>
+                        Las macetas inteligentes son la solución perfecta para quienes desean cuidar sus plantas de manera eficiente y sin complicaciones. Gracias a su tecnología avanzada, estas macetas monitorean constantemente las necesidades de tus plantas, como la humedad del suelo, la luz y los nutrientes, asegurando un crecimiento saludable y vibrante.
+                    </p>
+                    <p>
+                        Además, estas macetas están diseñadas para adaptarse a tu estilo de vida moderno. Con notificaciones en tiempo real a través de tu smartphone, nunca olvidarás regar tus plantas o ajustar su exposición a la luz. Esto las convierte en una herramienta ideal tanto para principiantes como para expertos en jardinería.
+                    </p>
+                    <p>
+                        También ayudan a optimizar el uso de recursos, como el agua, al regar solo cuando es necesario. Esto no solo beneficia a tus plantas, sino que también contribuye al cuidado del medio ambiente, promoviendo un estilo de vida más sostenible.
+                    </p>
+                    <p>
+                        Con un diseño elegante y funcional, las macetas inteligentes no solo cuidan de tus plantas, sino que también embellecen cualquier espacio, ya sea tu hogar, oficina o jardín. ¡Descubre cómo la tecnología puede transformar tu conexión con la naturaleza!
+                    </p>
                 </div>
             </section>
 

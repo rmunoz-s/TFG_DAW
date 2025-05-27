@@ -5,7 +5,7 @@ import { fetchProducts } from "../features/auth/products/productService.js";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-    // Estados para filtros
+    // Estado para filtros
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filters, setFilters] = useState({
     category: "",
@@ -29,7 +29,7 @@ const ProductList = () => {
     loadProducts();
   }, []);
 
-  // Función para manejar cambios en los filtros
+  // cambios en los filtros
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters({
@@ -38,20 +38,17 @@ const ProductList = () => {
     });
   };
 
-  // Aplicar filtros cada vez que cambien
   useEffect(() => {
     let result = [...products];
 
-    // Filtrar por categoría
     if (filters.category) {
       result = result.filter(product => product.category === filters.category);
     }
 
-    // Filtrar por precio mínimo
     if (filters.minPrice !== "") {
       const min = parseFloat(filters.minPrice);
       result = result.filter(product => product.price >= min);
-    }    // Filtrar por precio máximo
+    }    
     if (filters.maxPrice !== "") {
       const max = parseFloat(filters.maxPrice);
       result = result.filter(product => product.price <= max);
@@ -59,7 +56,6 @@ const ProductList = () => {
 
     setFilteredProducts(result);
   }, [filters, products]);
-  // Limpiar todos los filtros
   const clearFilters = () => {
     setFilters({
       category: "",
@@ -80,7 +76,7 @@ const ProductList = () => {
       <div className="border-2 border-lime-600 rounded-lg p-5 bg-neutral-800 h-[10%] w-auto max-w-xs flex-shrink-0">
         <h3 className="text-green-500 text-center font-bold mb-4">Filtros</h3>
         
-        {/* Filtro por categoría */}
+        {/* categoría */}
         <div className="mb-4">
           <label className="block text-sm font-medium mb-2">Categoría</label>
           <select
@@ -97,7 +93,7 @@ const ProductList = () => {
           </select>
         </div>
         
-        {/* Filtro por precio mínimo */}
+        {/*  precio mínimo */}
         <div className="mb-4">
           <label className="block text-sm font-medium mb-2">Precio mínimo</label>
           <input
@@ -111,7 +107,7 @@ const ProductList = () => {
           />
         </div>
         
-        {/* Filtro por precio máximo */}
+        {/* precio máximo */}
         <div className="mb-4">
           <label className="block text-sm font-medium mb-2">Precio máximo</label>
           <input
@@ -125,7 +121,6 @@ const ProductList = () => {
           />
         </div>
         
-        {/* Botón para limpiar filtros */}
         <button
           onClick={clearFilters}
           className="w-full bg-lime-600 text-black py-2 px-4 rounded hover:bg-lime-700 transition-colors mt-4"
@@ -133,7 +128,7 @@ const ProductList = () => {
           Limpiar filtros
         </button>
         
-        {/* Contador de resultados */}        <p className="mt-4 text-center text-sm">
+        <p className="mt-4 text-center text-sm">
           {filteredProducts.length} producto(s) encontrado(s)
         </p>
       </div>

@@ -18,11 +18,9 @@ function DetallesCompra() {
     cartItems,
   } = useCarrito();
 
-  // State for messages
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  // Refs for the forms
   const datosPersonalesRef = useRef(null);
   const formdePagoRef = useRef(null);
 

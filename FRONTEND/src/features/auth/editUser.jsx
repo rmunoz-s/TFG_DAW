@@ -26,7 +26,6 @@ function EditUser() {
       return;
     }
 
-    // Obtener datos del usuario usando el token
     const fetchUserData = async () => {
       try {
         const response = await fetch(`http://localhost:3000/usuarios/${userId}`, {
@@ -105,7 +104,6 @@ function EditUser() {
   const handleSubmit = async (e) => {
 	e.preventDefault();
 	
-	// Verificar contraseña
 	if (formData.password || formData.confirmPassword) {
 	  if (!formData.currentPassword) {
 		setPasswordError('Debes introducir tu contraseña actual para cambiarla');
